@@ -76,7 +76,7 @@ class ProGateway extends AbstractGateway
 
     public function status(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\PayPal\Message\FetchTransactionRequest', $parameters);
+        return $this->createRequest('\Omnipay\PayPal\Message\RestFetchTransactionRequest', $parameters);
     }
 
     public function void(array $parameters = array())
