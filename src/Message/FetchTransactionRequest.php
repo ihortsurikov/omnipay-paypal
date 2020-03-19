@@ -25,7 +25,7 @@ class FetchTransactionRequest extends AbstractRequest
 
         if (count($responseArray) > 0) {
             $responseArray['refundable'] = $responseArray['PAYMENTSTATUS'] === FetchTransactionResponse::COMPLETED_STATUS;
-            $responseArray['voidable'] = $responseArray['PAYMENTSTATUS'] === FetchTransactionResponse::PROCESSED_STATUS;
+            $responseArray['voidable'] = $responseArray['PAYMENTSTATUS'] !== FetchTransactionResponse::VOIDED_STATUS;
         }
 
         return $this->createResponse($responseArray);
